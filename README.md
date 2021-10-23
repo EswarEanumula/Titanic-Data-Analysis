@@ -1,5 +1,5 @@
 MapReduce Use Case – Titanic Data Analysis
-DATASET DESCRIPTION
+## DATASET DESCRIPTION
 Column 1 : PassengerId
 
 Column 2 : Survived  (survived=0 & died=1)
