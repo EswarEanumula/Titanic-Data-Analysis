@@ -1,0 +1,60 @@
+
+********For problem statement 1.*******
+----------Explanation of the above Mapper code:-------------------
+
+line 1 we are taking a class by name Average_age,
+In line 2 the Mapper default class is extended to have the arguments keyIn as LongWritable and ValueIn as Text and KeyOut as Text and ValueOut as IntWritable.
+In line 3, the variables declared are: a private Text variable gender which will store the gender of the person who died in the Titanic tragedy.
+In line 4 the variables declared are: a private IntWritable variable age which will store the age of the MapReduce deals with Key and Value pairs.Here the key is set as gender and value as age.
+In line 5 we are overriding the map method which will run one time for every line.
+In line 6 we are storing the line in a string variable
+In line 7 we are splitting the line by using comma “,” delimiter and storing the values in a String Array so that all the columns in a row are stored in the string array.
+In line 8 we are taking a condition if we have the string array length greater than 6 which means if the line or row has at least 7 columns then the do the rest. This helps in eliminating the ArrayIndexOutOfBoundsException in some cases if the data inside the data set is incorrect.
+In line 9 we are storing the gender which is in 5th
+In line 10 we are including a condition whether the person is alive or not if he is not alive then proceed.
+In line 11 we are checking whether the data in that index is numeric data or not by using a regular expression which can be achieved by “matches function in java”,if it is numeric data then it will proceed.
+In line 12 we are converting that numeric data into an integer data by type casting.
+In line 13 we are storing the age of the person in age
+In line 17 we are writing the key and value into the context which will be the output of the map method.
+
+
+
+---------------While coming to the Reducer code--------------
+
+line 1 extends the default Reducer class with arguments KeyIn as Text and ValueIn as IntWritable which are same as the outputs of the mapper class and KeyOut as Text and ValueOut as IntWritbale which will be final outputs of our MapReduce program.
+In line 2 we overriding the Reduce method which will run each time for every key.
+In line 4 declaring an integer sum which will store the sum of all the ages of people into it.
+In line 5 we are taking another variable as “l” which will be incremented every time as many values are there for that key.
+In line 6 a foreach loop is taken which will run each time for the values inside the “Iterable values” which are coming from the shuffle and sort phase after the mapper phase.
+Value iterated.
+In line 8 we are storing and calculating the sum of the values.
+Closing bracket.
+In line 10 perform the average of the obtained sum and writes the respected key and the obtained sum as value to the context.
+
+
+************For problem statement 2****************
+
+----------------Explanation of the above Mapper code----------------
+n 
+line 1 we are taking a class by name survived
+In line 2 extending the Mapper default class having the arguments keyIn as LongWritable and ValueIn as Text and KeyOut as Text and ValueOut as IntWritable.
+In line 3 declaring a private Text variable ‘people’ which will store the Text value as
+In line 4 declaring a private static final IntWritable variable ‘one’ which will be one and can not be modified.MapReduce deals with Key and Value pairs.Here we can set the key as pclass and value as one.
+In line 5 we are overriding the map method which will run one time for every line.
+In line 6 we are storing the line in a string variable ‘line’ .
+In line 7 we are splitting the line by using comma “,” delimiter and storing the values in a String Array so that all the columns in a row are stored in the string array.
+In line 8 we are taking a condition if we have the string array length greater than 6 which means if the line or row has at least 7 columns then do the rest this helps in eliminating the ArrayIndexOutOfBoundsException in some cases if the data inside the data set is incorrect.
+In line 9 we are making a composite by combining the necessary columns 2nd column which specifies whether the person is alive or not and the 5th column to specify the person’s gender and 6th column to specify their age.
+This is the easiest way of forming a composite key in MapReduce and the functionality is very similar to the original way of making a composite key.
+In line 10 we are storing the prepared composite key in people.
+In line 11 we are writing the key and value into the context which will be the output of the map method.
+
+
+----------While coming to the Reducer code---------
+
+In line 1 extends the default Reducer class with arguments KeyIn as Text and ValueIn as IntWritable which are same as the outputs of the mapper class and KeyOut as Text and ValueOut as IntWritbale which will be final outputs of our MapReduce program.
+In line 2 we overriding the Reduce method which will run each time for every key.
+In line 4 declaring an integer variable sum which will store the sum of all the values for each key.
+In line 5 a foreach loop is taken which will run each time for the values inside the “Iterable values” which are coming from the shuffle and sort phase after the mapper phase.
+In line 6 we are storing and calculating the sum of the values.
+In line 8 writes the respected key and the obtained sum as value to the context.
