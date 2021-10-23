@@ -24,12 +24,12 @@ Column 11 : Cabin
 
 Column 12 : Embarked
 
-*********Problem Statement 1:**********
+### *********Problem Statement 1:**********
 
 In this problem statement, we will find the average age of males and females who died in the Titanic tragedy.
 
 
-***********Problem Statement 2:*********
+### ***********Problem Statement 2:*********
 In this problem statement, we will find the number of people died or survived in each class with their genders and ages.
 
 
